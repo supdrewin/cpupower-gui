@@ -3,13 +3,22 @@ post_install() {
 	echo ":: Enabling cpupower-gui-helper service"
 	systemctl enable cpupower-gui-helper.service
 	systemctl enable cpupower-gui.service
+
+	echo ":: If you want your settings automatically apply at login,
+:: enter the following command after installation:
+:: ~ > systemctl --user enable cpupower-gui-user.service"
 }
 
 post_upgrade() {
 	echo ":: Enabling cpupower-gui-helper service"
 	systemctl enable cpupower-gui-helper.service
 	systemctl enable cpupower-gui.service
+
+	echo ":: If you want your settings automatically apply at login,
+:: enter the following command after installation:
+:: ~ > systemctl --user enable cpupower-gui-user.service"
 }
+
 pre_remove() {
 	systemctl disable cpupower-gui-helper.service
 	systemctl disable cpupower-gui.service
